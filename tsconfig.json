@@ -19,6 +19,10 @@
       "counter": [
         "dist/counter/counter",
         "dist/counter"
+      ],
+      "my-lib": [
+        "dist/my-lib/my-lib",
+        "dist/my-lib"
       ]
     }
   },

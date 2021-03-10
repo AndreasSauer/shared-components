@@ -2,7 +2,7 @@
   <div class="numbers">
     <span
       *ngFor="let column of numberConfig"
-      [ngStyle]="{ transform: getAnimation(column) }"
+      [ngStyle]="{ transform: column | transition: runAnimation }"
     >
       <span *ngFor="let num of column">{{ num }}</span>
     </span>
