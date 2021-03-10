@@ -1,0 +1,435 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "CounterComponent",
+            "id": "component-CounterComponent-59e6d890a87166bcedca32e2023b0b3e",
+            "file": "projects/counter/src/lib/counter.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "lib-counter",
+            "styleUrls": [
+                "./counter.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./counter.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "diff",
+                    "defaultValue": "0",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "numberConfig",
+                    "defaultValue": "[]",
+                    "type": "string[][]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "old",
+                    "defaultValue": "this.createNumberArray(223)",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "runAnimation",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "animateNumber",
+                    "args": [
+                        {
+                            "name": "diff",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "diff",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "calcDeltaBetweenNumbers",
+                    "args": [
+                        {
+                            "name": "old",
+                            "type": "number"
+                        },
+                        {
+                            "name": "newVal",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string[]",
+                    "typeParameters": [],
+                    "line": 81,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "old",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "newVal",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "createDeltaSign",
+                    "args": [
+                        {
+                            "name": "old",
+                            "type": "string"
+                        },
+                        {
+                            "name": "newVal",
+                            "type": "string"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string[]",
+                    "typeParameters": [],
+                    "line": 77,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "old",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "newVal",
+                            "type": "string",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "createNumberArray",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "[]",
+                    "typeParameters": [],
+                    "line": 101,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "createNumberConfig",
+                    "args": [
+                        {
+                            "name": "numbers",
+                            "type": "(number | \"-\" | \"+\")[]"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "numbers",
+                            "type": "(number | \"-\" | \"+\")[]",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "generateRandomNumber",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "getAnimation",
+                    "args": [
+                        {
+                            "name": "numbers",
+                            "type": "number[]"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 21,
+                    "modifierKind": [
+                        114
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "numbers",
+                            "type": "number[]",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                },
+                {
+                    "name": "randomNumber",
+                    "args": [
+                        {
+                            "name": "min",
+                            "type": "number"
+                        },
+                        {
+                            "name": "max",
+                            "type": "number"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 46,
+                    "modifierKind": [
+                        112
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "min",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "max",
+                            "type": "number",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "startChange",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "modifierKind": [
+                        112
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-counter',\n  templateUrl: './counter.component.html',\n  styleUrls: ['./counter.component.scss'],\n})\nexport class CounterComponent implements OnInit {\n  public diff: number = 0;\n  public old = this.createNumberArray(223);\n  public runAnimation = false;\n\n  public numberConfig: string[][] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {\n    this.generateRandomNumber();\n  }\n\n  public getAnimation(numbers: number[]): string {\n    if (!this.runAnimation) {\n      return 'unset';\n    }\n    const dist = numbers.length - 1;\n    return `translateY(-${dist * 100}%)`;\n  }\n\n  private generateRandomNumber() {\n    setInterval(() => {\n      this.startChange();\n    }, 5000);\n    this.startChange();\n  }\n\n  private startChange() {\n    this.numberConfig = [];\n    this.runAnimation = false;\n    setTimeout(() => {\n      this.diff = this.randomNumber(-20, 20);\n      const value = parseInt(this.old.join('')) + this.diff;\n      this.animateNumber(value);\n    }, 0);\n  }\n\n  private randomNumber(min: number, max: number): number {\n    return Math.floor(Math.random() * (max - min + 1) + min);\n  }\n\n  private animateNumber(diff: number) {\n    const numberArray = this.createNumberArray(diff);\n    this.createNumberConfig(numberArray);\n    setTimeout(() => (this.runAnimation = true), 1000);\n    this.old = numberArray;\n  }\n\n  private createNumberConfig(numbers: (number | '-' | '+')[]) {\n    console.log(this.old);\n    for (let index = 0; index < numbers.length; index++) {\n      const currentNumber = numbers[index];\n      const oldNumber = this.old[index];\n      if (typeof currentNumber === 'number' && typeof oldNumber === 'number') {\n        this.numberConfig[index] = this.calcDeltaBetweenNumbers(\n          oldNumber,\n          currentNumber\n        );\n      } else {\n        this.numberConfig[index] = this.createDeltaSign(\n          String(oldNumber),\n          String(currentNumber)\n        );\n      }\n    }\n    console.log(this.numberConfig);\n  }\n\n  private createDeltaSign(old: string, newVal: string): string[] {\n    return old === newVal ? [old] : [old, newVal];\n  }\n\n  private calcDeltaBetweenNumbers(old: number, newVal: number): string[] {\n    let result = [String(old)];\n    let notFound = true;\n    if (old === newVal) {\n      return result;\n    }\n    let calcNum = old;\n    while (notFound) {\n      calcNum++;\n      if (calcNum > 9) {\n        calcNum = 0;\n      }\n      result.push(String(calcNum));\n      if (calcNum === newVal) {\n        notFound = false;\n      }\n    }\n    return result;\n  }\n\n  private createNumberArray(value: number): (number | '-' | '+')[] {\n    let isNegativ = false;\n    const numberArray = value.toString().split('');\n    if (numberArray[0] === '-') {\n      isNegativ = true;\n      numberArray.shift();\n    }\n    for (let index = 0; numberArray.length < 6; index++) {\n      numberArray.unshift('0');\n    }\n    if (isNegativ) {\n      numberArray.unshift('-');\n    } else {\n      numberArray.unshift('+');\n    }\n    return numberArray.map((num) =>\n      num === '-' || num === '+' ? num : parseInt(num)\n    );\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n  font-family: Arial, Helvetica, sans-serif;\n}\n.number-box {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  .numbers {\n    line-height: 1;\n    position: relative;\n    display: flex;\n    overflow: hidden;\n    align-items: center;\n    height: 5rem;\n    font-size: 5rem;\n    span {\n      z-index: 1;\n      display: flex;\n      flex-direction: column;\n      height: 100%;\n      transition: all 2s ease;\n      transform: translateY(0);\n      line-height: 1;\n      span {\n        flex: 0 0 100%;\n        height: 100%;\n      }\n    }\n  }\n  .subtitle {\n    font-size: 1.2rem;\n    display: flex;\n    width: 100%;\n    margin: 0 0 2rem 0;\n    flex-direction: row;\n    justify-content: space-between;\n  }\n}\n",
+                    "styleUrl": "./counter.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"number-box\">\n  <div class=\"subtitle\">\n    <div>Veränderung</div>\n    <div class=\"diff\">{{ diff }}</div>\n  </div>\n\n  <div class=\"numbers\">\n    <span\n      *ngFor=\"let column of numberConfig\"\n      [ngStyle]=\"{ transform: getAnimation(column) }\"\n    >\n      <span *ngFor=\"let num of column\">{{ num }}</span>\n    </span>\n  </div>\n</div>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "CounterModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CounterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CounterComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "stories",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "stories/counter.stories.ts",
+                "type": "",
+                "defaultValue": "storiesOf('counter', module)"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "stories/counter.stories.ts": [
+                {
+                    "name": "stories",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "stories/counter.stories.ts",
+                    "type": "",
+                    "defaultValue": "storiesOf('counter', module)"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "projects/counter/src/lib/counter.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CounterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/16",
+                "status": "low"
+            },
+            {
+                "filePath": "stories/counter.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "stories",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

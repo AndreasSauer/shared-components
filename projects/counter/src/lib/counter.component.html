@@ -1,0 +1,10 @@
+<div class="number-box">
+  <div class="numbers">
+    <span
+      *ngFor="let column of numberConfig"
+      [ngStyle]="{ transform: getAnimation(column) }"
+    >
+      <span *ngFor="let num of column">{{ num }}</span>
+    </span>
+  </div>
+</div>
