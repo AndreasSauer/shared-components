@@ -1,24 +1,16 @@
-# Counter
+# Angular Counter
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.13.
+Small counter component which can display whole numbers. The transitions between two numbers is automatically animated.
 
-## Code scaffolding
+# Usage
 
-Run `ng generate component component-name --project counter` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project counter`.
-> Note: Don't forget to add `--project counter` or else it will be added to the default project in your `angular.json` file. 
+1. Install the package
+2. Add the CounterModule to your module
+3. Use the componente in your template <ans-counter [number]="1234"></ans-counter>
 
-## Build
+# Demo
 
-Run `ng build counter` to build the project. The build artifacts will be stored in the `dist/` directory.
+comming soon
 
-## Publishing
-
-After building your library with `ng build counter`, go to the dist folder `cd dist/counter` and run `npm publish`.
-
-## Running unit tests
-
-Run `ng test counter` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Github

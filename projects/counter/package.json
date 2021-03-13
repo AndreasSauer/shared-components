@@ -1,6 +1,12 @@
 {
-  "name": "counter",
-  "version": "0.0.1",
+  "name": "@andreassauer/angular-counter",
+  "author": "Andreas Sauer",
+  "version": "0.0.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndreasSauer/shared-components"
+  },
   "peerDependencies": {
     "@angular/common": "^9.1.13",
     "@angular/core": "^9.1.13"
