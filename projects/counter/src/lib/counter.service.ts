@@ -6,7 +6,7 @@ export type NumberArray = (number | '-' | '+' | ' ')[];
 export class CounterService {
   public createNumberArray(value: number): NumberArray {
     const numberArray = value.toString().split('');
-    return numberArray.map((num) => (num === '-' ? num : parseInt(num)));
+    return numberArray.map((num) => (num === '-' ? num : Number(num)));
   }
 
   public createNumberConfig(
@@ -40,7 +40,7 @@ export class CounterService {
   }
 
   private calcDeltaBetweenNumbers(old: number, newVal: number): string[] {
-    let result = [String(old)];
+    const result = [String(old)];
     let notFound = true;
     if (old === newVal) {
       return result;

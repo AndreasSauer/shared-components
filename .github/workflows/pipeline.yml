@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  validation:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,4 +16,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i
       - run: npm run lint
+      - run: npm run test
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js test ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i
       - run: npm run build:counter

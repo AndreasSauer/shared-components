@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, Input, OnChanges } from '@angular/core';
 import { CounterService } from './counter.service';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'ans-counter',
   templateUrl: './counter.component.html',
   styleUrls: ['./counter.component.scss'],

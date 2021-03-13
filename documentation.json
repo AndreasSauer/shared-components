@@ -1,102 +1,59 @@
 {
-    "pipes": [],
-    "interfaces": [],
-    "injectables": [],
-    "classes": [],
-    "directives": [],
-    "components": [
+    "pipes": [
         {
-            "name": "CounterComponent",
-            "id": "component-CounterComponent-59e6d890a87166bcedca32e2023b0b3e",
-            "file": "projects/counter/src/lib/counter.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "lib-counter",
-            "styleUrls": [
-                "./counter.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./counter.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
+            "name": "CounterTransitionPipe",
+            "id": "pipe-CounterTransitionPipe-e9f22f13db0705162daa428c45e1268f",
+            "file": "projects/counter/src/lib/counter-animation-pipe.ts",
+            "type": "pipe",
+            "description": "",
+            "properties": [],
+            "methods": [
                 {
-                    "name": "diff",
-                    "defaultValue": "0",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 9,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "numberConfig",
-                    "defaultValue": "[]",
-                    "type": "string[][]",
-                    "optional": false,
-                    "description": "",
-                    "line": 13,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "old",
-                    "defaultValue": "this.createNumberArray(223)",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "modifierKind": [
-                        114
-                    ]
-                },
-                {
-                    "name": "runAnimation",
-                    "defaultValue": "false",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 11,
-                    "modifierKind": [
-                        114
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "animateNumber",
+                    "name": "transform",
                     "args": [
                         {
-                            "name": "diff",
-                            "type": "number"
+                            "name": "numbers",
+                            "type": "string[]"
+                        },
+                        {
+                            "name": "runAnimation",
+                            "type": "boolean"
                         }
                     ],
                     "optional": false,
-                    "returnType": "void",
+                    "returnType": "string",
                     "typeParameters": [],
-                    "line": 50,
-                    "modifierKind": [
-                        112
-                    ],
+                    "line": 5,
                     "jsdoctags": [
                         {
-                            "name": "diff",
-                            "type": "number",
+                            "name": "numbers",
+                            "type": "string[]",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "runAnimation",
+                            "type": "boolean",
                             "tagName": {
                                 "text": "param"
                             }
                         }
                     ]
-                },
+                }
+            ],
+            "ngname": "transition",
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({ name: 'transition' })\nexport class CounterTransitionPipe implements PipeTransform {\n  transform(numbers: string[], runAnimation: boolean): string {\n    if (!runAnimation) {\n      return 'unset';\n    }\n    const dist = numbers?.length - 1;\n    return `translateY(-${dist * 100}%)`;\n  }\n}\n"
+        }
+    ],
+    "interfaces": [],
+    "injectables": [
+        {
+            "name": "CounterService",
+            "id": "injectable-CounterService-252979d461952c04247add08ebd210f1",
+            "file": "projects/counter/src/lib/counter.service.ts",
+            "properties": [],
+            "methods": [
                 {
                     "name": "calcDeltaBetweenNumbers",
                     "args": [
@@ -112,7 +69,7 @@
                     "optional": false,
                     "returnType": "string[]",
                     "typeParameters": [],
-                    "line": 81,
+                    "line": 42,
                     "modifierKind": [
                         112
                     ],
@@ -148,7 +105,7 @@
                     "optional": false,
                     "returnType": "string[]",
                     "typeParameters": [],
-                    "line": 77,
+                    "line": 38,
                     "modifierKind": [
                         112
                     ],
@@ -178,11 +135,11 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "[]",
+                    "returnType": "NumberArray",
                     "typeParameters": [],
-                    "line": 101,
+                    "line": 7,
                     "modifierKind": [
-                        112
+                        114
                     ],
                     "jsdoctags": [
                         {
@@ -198,100 +155,131 @@
                     "name": "createNumberConfig",
                     "args": [
                         {
-                            "name": "numbers",
-                            "type": "(number | \"-\" | \"+\")[]"
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 57,
-                    "modifierKind": [
-                        112
-                    ],
-                    "jsdoctags": [
+                            "name": "newNumbers",
+                            "type": "NumberArray"
+                        },
                         {
-                            "name": "numbers",
-                            "type": "(number | \"-\" | \"+\")[]",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "generateRandomNumber",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 29,
-                    "modifierKind": [
-                        112
-                    ]
-                },
-                {
-                    "name": "getAnimation",
-                    "args": [
-                        {
-                            "name": "numbers",
-                            "type": "number[]"
+                            "name": "oldNumbers",
+                            "type": "NumberArray"
                         }
                     ],
                     "optional": false,
-                    "returnType": "string",
+                    "returnType": "[][]",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 12,
                     "modifierKind": [
                         114
                     ],
                     "jsdoctags": [
                         {
-                            "name": "numbers",
-                            "type": "number[]",
+                            "name": "newNumbers",
+                            "type": "NumberArray",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "oldNumbers",
+                            "type": "NumberArray",
                             "tagName": {
                                 "text": "param"
                             }
                         }
                     ]
-                },
+                }
+            ],
+            "description": "",
+            "sourceCode": "import { Injectable, Type } from '@angular/core';\n\nexport type NumberArray = (number | '-' | '+' | ' ')[];\n\n@Injectable()\nexport class CounterService {\n  public createNumberArray(value: number): NumberArray {\n    const numberArray = value.toString().split('');\n    return numberArray.map((num) => (num === '-' ? num : Number(num)));\n  }\n\n  public createNumberConfig(\n    newNumbers: NumberArray,\n    oldNumbers: NumberArray\n  ): string[][] {\n    const result = [];\n    while (newNumbers.length > oldNumbers.length) {\n      oldNumbers.unshift(' ');\n    }\n    while (oldNumbers.length > newNumbers.length) {\n      newNumbers.unshift(' ');\n    }\n    for (let index = 0; index < newNumbers.length; index++) {\n      const currentNumber = newNumbers[index];\n      const oldNumber = oldNumbers[index] == null ? ' ' : oldNumbers[index];\n      if (typeof currentNumber === 'number' && typeof oldNumber === 'number') {\n        result[index] = this.calcDeltaBetweenNumbers(oldNumber, currentNumber);\n      } else {\n        result[index] = this.createDeltaSign(\n          String(oldNumber),\n          String(currentNumber)\n        );\n      }\n    }\n    return result;\n  }\n\n  private createDeltaSign(old: string, newVal: string): string[] {\n    return old === newVal ? [old] : [old, newVal];\n  }\n\n  private calcDeltaBetweenNumbers(old: number, newVal: number): string[] {\n    const result = [String(old)];\n    let notFound = true;\n    if (old === newVal) {\n      return result;\n    }\n    let calcNum = old;\n    while (notFound) {\n      calcNum++;\n      if (calcNum > 9) {\n        calcNum = 0;\n      }\n      result.push(String(calcNum));\n      if (calcNum === newVal) {\n        notFound = false;\n      }\n    }\n    return result;\n  }\n}\n",
+            "type": "injectable"
+        }
+    ],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "CounterComponent",
+            "id": "component-CounterComponent-f56b2b0d5552440c332aa24a735c5932",
+            "file": "projects/counter/src/lib/counter.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
                 {
-                    "name": "ngOnInit",
-                    "args": [],
+                    "name": "CounterService"
+                }
+            ],
+            "selector": "ans-counter",
+            "styleUrls": [
+                "./counter.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./counter.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "number",
+                    "line": 11,
+                    "type": "number"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "numberConfig",
+                    "defaultValue": "[]",
+                    "type": "string[][]",
                     "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 17
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        114
+                    ]
                 },
                 {
-                    "name": "randomNumber",
+                    "name": "old",
+                    "defaultValue": "this.counterService.createNumberArray(0)",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "runAnimation",
+                    "defaultValue": "false",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        114
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "animateNumber",
                     "args": [
                         {
-                            "name": "min",
-                            "type": "number"
-                        },
-                        {
-                            "name": "max",
+                            "name": "diff",
                             "type": "number"
                         }
                     ],
                     "optional": false,
-                    "returnType": "number",
+                    "returnType": "void",
                     "typeParameters": [],
-                    "line": 46,
+                    "line": 31,
                     "modifierKind": [
                         112
                     ],
                     "jsdoctags": [
                         {
-                            "name": "min",
-                            "type": "number",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "max",
+                            "name": "diff",
                             "type": "number",
                             "tagName": {
                                 "text": "param"
@@ -300,15 +288,12 @@
                     ]
                 },
                 {
-                    "name": "startChange",
+                    "name": "ngOnChanges",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 36,
-                    "modifierKind": [
-                        112
-                    ]
+                    "line": 23
                 }
             ],
             "hostBindings": [],
@@ -316,11 +301,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'lib-counter',\n  templateUrl: './counter.component.html',\n  styleUrls: ['./counter.component.scss'],\n})\nexport class CounterComponent implements OnInit {\n  public diff: number = 0;\n  public old = this.createNumberArray(223);\n  public runAnimation = false;\n\n  public numberConfig: string[][] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {\n    this.generateRandomNumber();\n  }\n\n  public getAnimation(numbers: number[]): string {\n    if (!this.runAnimation) {\n      return 'unset';\n    }\n    const dist = numbers.length - 1;\n    return `translateY(-${dist * 100}%)`;\n  }\n\n  private generateRandomNumber() {\n    setInterval(() => {\n      this.startChange();\n    }, 5000);\n    this.startChange();\n  }\n\n  private startChange() {\n    this.numberConfig = [];\n    this.runAnimation = false;\n    setTimeout(() => {\n      this.diff = this.randomNumber(-20, 20);\n      const value = parseInt(this.old.join('')) + this.diff;\n      this.animateNumber(value);\n    }, 0);\n  }\n\n  private randomNumber(min: number, max: number): number {\n    return Math.floor(Math.random() * (max - min + 1) + min);\n  }\n\n  private animateNumber(diff: number) {\n    const numberArray = this.createNumberArray(diff);\n    this.createNumberConfig(numberArray);\n    setTimeout(() => (this.runAnimation = true), 1000);\n    this.old = numberArray;\n  }\n\n  private createNumberConfig(numbers: (number | '-' | '+')[]) {\n    console.log(this.old);\n    for (let index = 0; index < numbers.length; index++) {\n      const currentNumber = numbers[index];\n      const oldNumber = this.old[index];\n      if (typeof currentNumber === 'number' && typeof oldNumber === 'number') {\n        this.numberConfig[index] = this.calcDeltaBetweenNumbers(\n          oldNumber,\n          currentNumber\n        );\n      } else {\n        this.numberConfig[index] = this.createDeltaSign(\n          String(oldNumber),\n          String(currentNumber)\n        );\n      }\n    }\n    console.log(this.numberConfig);\n  }\n\n  private createDeltaSign(old: string, newVal: string): string[] {\n    return old === newVal ? [old] : [old, newVal];\n  }\n\n  private calcDeltaBetweenNumbers(old: number, newVal: number): string[] {\n    let result = [String(old)];\n    let notFound = true;\n    if (old === newVal) {\n      return result;\n    }\n    let calcNum = old;\n    while (notFound) {\n      calcNum++;\n      if (calcNum > 9) {\n        calcNum = 0;\n      }\n      result.push(String(calcNum));\n      if (calcNum === newVal) {\n        notFound = false;\n      }\n    }\n    return result;\n  }\n\n  private createNumberArray(value: number): (number | '-' | '+')[] {\n    let isNegativ = false;\n    const numberArray = value.toString().split('');\n    if (numberArray[0] === '-') {\n      isNegativ = true;\n      numberArray.shift();\n    }\n    for (let index = 0; numberArray.length < 6; index++) {\n      numberArray.unshift('0');\n    }\n    if (isNegativ) {\n      numberArray.unshift('-');\n    } else {\n      numberArray.unshift('+');\n    }\n    return numberArray.map((num) =>\n      num === '-' || num === '+' ? num : parseInt(num)\n    );\n  }\n}\n",
+            "sourceCode": "import { ChangeDetectorRef, Component, Input, OnChanges } from '@angular/core';\nimport { CounterService } from './counter.service';\n\n@Component({\n  selector: 'ans-counter',\n  templateUrl: './counter.component.html',\n  styleUrls: ['./counter.component.scss'],\n  providers: [CounterService],\n})\nexport class CounterComponent implements OnChanges {\n  @Input() public number: number;\n\n  public runAnimation = false;\n  public numberConfig: string[][] = [];\n\n  private old = this.counterService.createNumberArray(0);\n\n  constructor(\n    private counterService: CounterService,\n    private changeDetectorRef: ChangeDetectorRef\n  ) {}\n\n  ngOnChanges(): void {\n    if (this.number == null || Number.isNaN(this.number)) {\n      return;\n    }\n    this.runAnimation = false;\n    this.animateNumber(this.number);\n  }\n\n  private animateNumber(diff: number): void {\n    const numberArray = this.counterService.createNumberArray(diff);\n    this.numberConfig = this.counterService.createNumberConfig(\n      numberArray,\n      this.old\n    );\n    this.old = numberArray;\n    setTimeout(() => {\n      this.runAnimation = true;\n      this.changeDetectorRef.detectChanges();\n    }, 0);\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ":host {\n  font-family: Arial, Helvetica, sans-serif;\n}\n.number-box {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  .numbers {\n    line-height: 1;\n    position: relative;\n    display: flex;\n    overflow: hidden;\n    align-items: center;\n    height: 5rem;\n    font-size: 5rem;\n    span {\n      z-index: 1;\n      display: flex;\n      flex-direction: column;\n      height: 100%;\n      transition: all 2s ease;\n      transform: translateY(0);\n      line-height: 1;\n      span {\n        flex: 0 0 100%;\n        height: 100%;\n      }\n    }\n  }\n  .subtitle {\n    font-size: 1.2rem;\n    display: flex;\n    width: 100%;\n    margin: 0 0 2rem 0;\n    flex-direction: row;\n    justify-content: space-between;\n  }\n}\n",
+                    "data": ":host {\n  --font-family: inherit;\n  --font-size: 2rem;\n  font-family: var(--font-family);\n}\n.number-box {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  .numbers {\n    line-height: 1;\n    position: relative;\n    display: flex;\n    overflow: hidden;\n    align-items: center;\n    height: var(--font-size);\n    font-size: var(--font-size);\n    span {\n      z-index: 1;\n      display: flex;\n      flex-direction: column;\n      height: 100%;\n      transition: all 2s ease;\n      transform: translateY(0);\n      line-height: 1;\n      span {\n        flex: 0 0 100%;\n        height: 100%;\n      }\n    }\n  }\n}\n",
                     "styleUrl": "./counter.component.scss"
                 }
             ],
@@ -328,13 +313,38 @@
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
-                "args": [],
-                "line": 13
+                "args": [
+                    {
+                        "name": "counterService",
+                        "type": "CounterService"
+                    },
+                    {
+                        "name": "changeDetectorRef",
+                        "type": "ChangeDetectorRef"
+                    }
+                ],
+                "line": 16,
+                "jsdoctags": [
+                    {
+                        "name": "counterService",
+                        "type": "CounterService",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "changeDetectorRef",
+                        "type": "ChangeDetectorRef",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
             },
             "implements": [
-                "OnInit"
+                "OnChanges"
             ],
-            "templateData": "<div class=\"number-box\">\n  <div class=\"subtitle\">\n    <div>Veränderung</div>\n    <div class=\"diff\">{{ diff }}</div>\n  </div>\n\n  <div class=\"numbers\">\n    <span\n      *ngFor=\"let column of numberConfig\"\n      [ngStyle]=\"{ transform: getAnimation(column) }\"\n    >\n      <span *ngFor=\"let num of column\">{{ num }}</span>\n    </span>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"number-box\">\n  <div class=\"numbers\">\n    <span\n      *ngFor=\"let column of numberConfig\"\n      [ngStyle]=\"{ transform: column | transition: runAnimation }\"\n    >\n      <span *ngFor=\"let num of column\">{{ num }}</span>\n    </span>\n  </div>\n</div>\n"
         }
     ],
     "modules": [
@@ -350,6 +360,9 @@
                     "elements": [
                         {
                             "name": "CounterComponent"
+                        },
+                        {
+                            "name": "CounterTransitionPipe"
                         }
                     ]
                 },
@@ -379,6 +392,21 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/counter/src/test.ts",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/counter/src/test.ts",
+                "type": "literal type"
+            },
+            {
                 "name": "stories",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -388,9 +416,36 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "NumberArray",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "(number | \"-\" | \"+\" | \" \")[]",
+                "file": "projects/counter/src/lib/counter.service.ts",
+                "description": "",
+                "kind": 166
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/counter/src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/counter/src/test.ts",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/counter/src/test.ts",
+                    "type": "literal type"
+                }
+            ],
             "stories/counter.stories.ts": [
                 {
                     "name": "stories",
@@ -404,7 +459,19 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "projects/counter/src/lib/counter.service.ts": [
+                {
+                    "name": "NumberArray",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "(number | \"-\" | \"+\" | \" \")[]",
+                    "file": "projects/counter/src/lib/counter.service.ts",
+                    "description": "",
+                    "kind": 166
+                }
+            ]
+        }
     },
     "routes": [],
     "coverage": {
@@ -412,12 +479,50 @@
         "status": "low",
         "files": [
             {
+                "filePath": "projects/counter/src/lib/counter-animation-pipe.ts",
+                "type": "pipe",
+                "linktype": "pipe",
+                "name": "CounterTransitionPipe",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/counter/src/lib/counter.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CounterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/counter/src/lib/counter.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "CounterService",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/counter/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/counter/src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
